@@ -29,15 +29,20 @@ export default function App() {
       { key: Math.random().toString(), value: enteredGoal }
     ]);
     showModal(false);
+    setGoal("");
   };
 
   const setModal = () => {
     showModal(true);
   };
 
+  const onCancel = () => {
+    showModal(false);
+  };
+
   return (
-    <View>
-      <View style={{ margin: 50 }}>
+    <View style={{ margin: 40 }}>
+      <View style={{ marginBottom: 20, marginTop: 30 }}>
         <Button title="Add Goal" onPress={setModal} />
       </View>
       <GoalInput
@@ -45,6 +50,7 @@ export default function App() {
         setGoalValue={setGoalValue}
         enteredGoal={enteredGoal}
         onAdd={onAdd}
+        onCancel={onCancel}
       />
       <FlatList
         style={{ marginBottom: 20 }}

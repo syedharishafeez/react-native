@@ -9,7 +9,7 @@ const GoalsList = props => {
           borderColor: "black",
           backgroundColor: "#ccc",
           borderWidth: 1,
-          margin: 10,
+          marginTop: 10,
           paddingVertical: 10
         }}
       >

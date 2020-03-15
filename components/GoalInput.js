@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, Button, Modal } from "react-native";
+import { View, TextInput, Button, Modal, StyleSheet } from "react-native";
 
 const GoalsInput = props => {
   console.log("visible = ", props.visible);
@@ -23,10 +23,30 @@ const GoalsInput = props => {
           onChangeText={props.setGoalValue}
           value={props.enteredGoal}
         />
-        <Button title="ADD" onPress={props.onAdd} />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "40%"
+          }}
+        >
+          <View style={style.buttonContainer}>
+            <Button title="ADD" onPress={props.onAdd} />
+          </View>
+          <View style={style.buttonContainer}>
+            <Button title="CANCEL" color="red" onPress={props.onCancel} />
+          </View>
+        </View>
       </View>
     </Modal>
   );
 };
 
 export default GoalsInput;
+
+const style = StyleSheet.create({
+  buttonContainer: {
+    width: "50%",
+    margin: 5
+  }
+});
